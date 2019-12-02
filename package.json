@@ -1,0 +1,17 @@
+{
+  "name": "editorjs",
+  "version": "1.0.0",
+  "description": "Editor.js - October CMS Plugin",
+  "main": "index.js",
+  "repository": "https://github.com/Cryden/oc-editorjs-plugin.git",
+  "author": "CRYDEsigN <Cryden_da@mail.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build index.js --out-dir assets/js"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.16.0",
+    "add": "^2.0.6",
+    "parcel-bundler": "^1.12.4"
+  }
+}
