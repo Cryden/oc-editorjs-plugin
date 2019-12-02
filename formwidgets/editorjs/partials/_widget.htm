@@ -3,7 +3,10 @@
 
 <script>
 const editor = new EditorJS({
-    tools: { 
+    tools: {
+      inlineCode: {
+          class: InlineCode,
+      },
       header: Header,
       paragraph: {
         class: Paragraph,

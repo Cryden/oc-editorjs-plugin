@@ -44,6 +44,7 @@ class Plugin extends PluginBase
         Event::listen('backend.form.extendFields', function($controlLibrary) {
             $controlLibrary->AddJs([
                 '$/crydesign/editorjs/assets/js/editorjs/editor.js',
+                '$/crydesign/editorjs/assets/js/editorjs/inline-code/dist/bundle.js',
                 '$/crydesign/editorjs/assets/js/editorjs/header/dist/bundle.js',
                 '$/crydesign/editorjs/assets/js/editorjs/paragraph/dist/bundle.js',
                 '$/crydesign/editorjs/assets/js/editorjs/image/dist/bundle.js',
