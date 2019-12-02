@@ -1,0 +1,78 @@
+{
+  "_from": "@editorjs/image",
+  "_id": "@editorjs/image@2.3.3",
+  "_inBundle": false,
+  "_integrity": "sha512-IYPCGFVRYyR37m9OeoX4I5SPlMPzHtEgjHzOTeZoU749CI2a7FYVBcMT2j5xoyfDtNSjWT9LAlvPJULv3CFxgg==",
+  "_location": "/@editorjs/image",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@editorjs/image",
+    "name": "@editorjs/image",
+    "escapedName": "@editorjs%2fimage",
+    "scope": "@editorjs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@editorjs/image/-/image-2.3.3.tgz",
+  "_shasum": "5bd0e46ab038853948c5e5df9b049cce53f2d998",
+  "_spec": "@editorjs/image",
+  "_where": "d:\\OpenServer\\domains\\test.octobercms.loc\\plugins\\crydesign\\editorjs",
+  "author": {
+    "name": "CodeX",
+    "email": "team@ifmo.su"
+  },
+  "bugs": {
+    "url": "https://github.com/editor-js/image/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Image Tool for Editor.js",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/runtime": "^7.2.0",
+    "@codexteam/ajax": "^4.1.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.9.0",
+    "eslint-config-codex": "github:codex-team/eslint-config",
+    "eslint-loader": "^2.1.1",
+    "formidable": "^1.2.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-nested-ancestors": "^2.0.0",
+    "request": "^2.88.0",
+    "style-loader": "^0.21.0",
+    "svg-inline-loader": "^0.8.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "homepage": "https://github.com/editor-js/image#readme",
+  "keywords": [
+    "codex editor",
+    "tool",
+    "image",
+    "editor.js",
+    "editorjs"
+  ],
+  "license": "MIT",
+  "main": "./dist/bundle.js",
+  "name": "@editorjs/image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/editor-js/image.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch"
+  },
+  "version": "2.3.3"
+}

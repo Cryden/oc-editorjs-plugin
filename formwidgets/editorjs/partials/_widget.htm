@@ -1,0 +1,29 @@
+<div id="editorjs"></div>
+<input type="hidden" id="<?= $name ?>" name="<?= $name ?>"> 
+
+<script>
+const editor = new EditorJS({
+    tools: { 
+      header: Header,
+      paragraph: {
+        class: Paragraph,
+        inlineToolbar: true,
+      },
+      image: {
+        class: ImageTool,
+        config: {
+          endpoints: {
+            byFile: '<?= $byFile ?>', // Your backend file uploader endpoint
+            byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+          }
+        }
+      }
+    },
+    onChange: function() {
+      editor.save().then((savedData) => {
+        document.getElementById("<?= $name ?>").value = JSON.stringify(savedData)
+      });
+    },
+    data: <?= $data ?>
+});
+</script>
