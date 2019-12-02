@@ -22,9 +22,14 @@ class Editorjs extends FormWidgetBase
     }
 
     public function prepareVars(){
+        $data = $this->getLoadValue();
+        if (strlen($data) == 0) {
+            $data = '{}';
+        }
+
         $this->vars['id'] = $this->getId();
         $this->vars['name'] = $this->getFieldName();
-        $this->vars['data'] = $this->getLoadValue();
+        $this->vars['data'] = $data;
         $this->vars['byFile'] = Backend::url('crydesign/editorjs/upload/file');
         $this->vars['byUrl'] = Backend::url('crydesign/editorjs/upload/url');
     }
