@@ -10,4 +10,4 @@
         type: editorjs
 ```
 
-- test
+- Add Webpack Bundler
