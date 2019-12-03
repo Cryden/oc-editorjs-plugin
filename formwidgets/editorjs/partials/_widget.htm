@@ -1,13 +1,16 @@
 <div id="editorjs"></div>
 <input type="hidden" id="<?= $name ?>" name="<?= $name ?>"> 
 
-<script>
+<script type="module">
+
 const editor = new EditorJS({
     tools: {
       inlineCode: {
           class: InlineCode,
       },
-      header: Header,
+      header: {
+          class: Header,
+      },
       paragraph: {
         class: Paragraph,
         inlineToolbar: true,
@@ -17,7 +20,7 @@ const editor = new EditorJS({
         config: {
           endpoints: {
             byFile: '<?= $byFile ?>', // Your backend file uploader endpoint
-            byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+            byUrl: '<?= $byUrl ?>', // Your endpoint that provides uploading by Url
           }
         }
       }
