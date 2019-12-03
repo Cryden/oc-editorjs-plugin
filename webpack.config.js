@@ -15,7 +15,12 @@ module.exports = {
                     "node_modules/@editorjs/header/dist/bundle.js",
                     "node_modules/@editorjs/image/dist/bundle.js",
                     "node_modules/@editorjs/inline-code/dist/bundle.js",
-                    "node_modules/@editorjs/paragraph/dist/bundle.js"
+                    "node_modules/@editorjs/paragraph/dist/bundle.js",
+                    "node_modules/@editorjs/marker/dist/bundle.js",
+                    "node_modules/@editorjs/list/dist/bundle.js",
+                    "node_modules/@editorjs/embed/dist/bundle.js",
+                    "node_modules/@editorjs/link/dist/bundle.js",
+                    "node_modules/@editorjs/table/dist/bundle.js",
                 ]
             }
         }),

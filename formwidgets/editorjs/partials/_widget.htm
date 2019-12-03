@@ -23,7 +23,37 @@ const editor = new EditorJS({
             byUrl: '<?= $byUrl ?>', // Your endpoint that provides uploading by Url
           }
         }
-      }
+      },
+      marker: {
+        class: Marker
+      },
+      list: {
+        class: List,
+        inlineToolbar: true,
+      },
+      embed: {
+        class: Embed,
+        config: {
+          services: {
+            youtube: true,
+            coub: true
+          }
+        }
+      },
+      linkTool: {
+        class: LinkTool,
+        config: {
+          endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching
+        }
+      },
+      table: {
+        class: Table,
+        inlineToolbar: true,
+        config: {
+          rows: 2,
+          cols: 3,
+        },
+      },
     },
     onChange: function() {
       editor.save().then((savedData) => {
