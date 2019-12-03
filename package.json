@@ -1,0 +1,27 @@
+{
+  "name": "editorjs",
+  "version": "1.0.0",
+  "description": "Editor.js - October CMS Plugin",
+  "main": "index.js",
+  "repository": "https://github.com/Cryden/oc-editorjs-plugin.git",
+  "author": "CRYDEsigN <Cryden_da@mail.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "targets": {
+    "main": {
+      "outputFormat": "esmodule"
+    }
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.16.0",
+    "@editorjs/header": "^2.3.2",
+    "@editorjs/image": "^2.3.3",
+    "@editorjs/inline-code": "^1.3.1",
+    "@editorjs/paragraph": "^2.6.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge-and-include-globally": "^2.1.20"
+  }
+}
