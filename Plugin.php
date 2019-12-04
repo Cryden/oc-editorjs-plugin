@@ -1,6 +1,5 @@
 <?php namespace Crydesign\Editorjs;
 
-use Backend;
 use Event;
 use System\Classes\PluginBase;
 
@@ -59,5 +58,40 @@ class Plugin extends PluginBase
                 'code'  => 'editorjs',
             ],
         ];
+    }
+
+    public function registerComponents()
+    {
+        return [
+            'Crydesign\Editorjs\Components\Editor' => 'editorjs'
+        ];
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'editable' => [$this, 'editable']
+            ]
+        ];
+    }
+
+    public function editable($text)
+    {
+        $data = json_decode($text);
+
+        $inner_html = '';
+
+        foreach ($data->blocks as $block) {
+            $inner_html = $inner_html.$block->type;
+        }
+
+        $html = '
+        <div id="'.$data->time.'" class="editorjs">
+            <h1> Editor </h1>'
+            .$inner_html.
+        '</div>';
+
+        return $html;
     }
 }
