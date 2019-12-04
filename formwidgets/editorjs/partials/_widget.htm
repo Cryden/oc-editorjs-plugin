@@ -21,7 +21,10 @@ const editor = new EditorJS({
           endpoints: {
             byFile: '<?= $byFile ?>', // Your backend file uploader endpoint
             byUrl: '<?= $byUrl ?>', // Your endpoint that provides uploading by Url
-          }
+          },
+          additionalRequestHeaders: {
+            'X-CSRF-TOKEN': '<?= csrf_token() ?>',
+          },
         }
       },
       marker: {
