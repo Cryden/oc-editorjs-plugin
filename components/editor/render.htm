@@ -4,7 +4,7 @@
             <h{{block.data.level}}>{{ block.data.text }}</h{{block.data.level}}>
         {% endif %}
         {% if block.type == 'paragraph' %}
-            {{ block.data.text | raw }}
+            <p class="block-paragraph">{{ block.data.text | raw }}</p>
         {% endif %}
         {% if block.type == 'image' %}
             <img src="{{ block.data.file.url }}" alt="{{ block.data.caption }}">
