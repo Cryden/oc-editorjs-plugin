@@ -12,9 +12,26 @@ class Editor extends \Cms\Classes\ComponentBase
         ];
     }
 
-    // This array becomes available on the page as {{ component.posts }}
-    public function posts()
+    public function defineProperties()
     {
-        return ['First Post', 'Second Post', 'Third Post'];
+        return [
+            'data' => [
+                 'title'             => 'Max items',
+                 'description'       => 'The most amount of todo items allowed',
+                 'default'           => '',
+                 'type'              => 'string',
+            ]
+        ];
+    }
+
+    public function onRun()
+    {
+        $this->addJs('assets/js/editorjs.js');
+        $this->addCss('assets/css/editorjs.css');
+    }
+
+    public function onEditorSave()
+    {
+        $this->page['result'] = $value1 + $value2;
     }
 }

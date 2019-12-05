@@ -1,0 +1,13 @@
+<div class="preview">
+    {% for block in blocks.blocks  %}
+        {% if block.type == 'header' %}
+            <h{{block.data.level}}>{{ block.data.text }}</h{{block.data.level}}>
+        {% endif %}
+        {% if block.type == 'paragraph' %}
+            {{ block.data.text | raw }}
+        {% endif %}
+        {% if block.type == 'image' %}
+            <img src="{{ block.data.file.url }}" alt="{{ block.data.caption }}">
+        {% endif %}
+    {% endfor %}
+</div>

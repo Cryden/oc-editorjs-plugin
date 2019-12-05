@@ -1,0 +1,91 @@
+{% set blocks = __SELF__.property('data')|json_decode %}
+
+<div class="editorjs__front">
+    {% partial __SELF__~"::toolbox" %}
+    {% partial __SELF__~"::render" blocks=blocks %}
+    {% partial __SELF__~"::editor"%}
+</div>
+
+
+
+<script type="module">
+const data = {{ __SELF__.property('data')|raw }};
+const saveButton = document.getElementById('saveButton');
+const editButton = document.getElementById('editButton');
+
+saveButton.addEventListener('click', function () {
+    $('.preview').toggle();
+    $('.editorjs').toggle();
+    $('.edit').toggle();
+});
+
+editButton.addEventListener('click', function () {
+    $('.preview').toggle();
+    $('.editorjs').toggle();
+    $('.edit').toggle();
+});
+
+const editor = new EditorJS({
+    tools: {
+      inlineCode: {
+          class: InlineCode,
+      },
+      header: {
+          class: Header,
+      },
+      paragraph: {
+        class: Paragraph,
+        inlineToolbar: true,
+      },
+      image: {
+        class: ImageTool,
+        config: {
+          endpoints: {
+            byFile: '/editorjs/handler/file', // Your backend file uploader endpoint
+            byUrl: '<?= $byUrl ?>', // Your endpoint that provides uploading by Url
+          },
+          additionalRequestHeaders: {
+            'X-CSRF-TOKEN': '<?= csrf_token() ?>',
+          },
+        }
+      },
+      marker: {
+        class: Marker
+      },
+      list: {
+        class: List,
+        inlineToolbar: true,
+      },
+      embed: {
+        class: Embed,
+        config: {
+          services: {
+            youtube: true,
+            coub: true
+          }
+        }
+      },
+      linkTool: {
+        class: LinkTool,
+        config: {
+          endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching
+        }
+      },
+      table: {
+        class: Table,
+        inlineToolbar: true,
+        config: {
+          rows: 2,
+          cols: 3,
+        },
+      },
+    },
+    onChange: function() {
+      editor.save().then((savedData) => {
+        document.getElementById("editorjs").value = JSON.stringify(savedData)
+      });
+    },
+    data: data
+});
+
+</script>

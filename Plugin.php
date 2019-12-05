@@ -63,7 +63,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Crydesign\Editorjs\Components\Editor' => 'editorjs'
+            'Crydesign\Editorjs\Components\Editor' => 'editor'
         ];
     }
 
@@ -71,7 +71,8 @@ class Plugin extends PluginBase
     {
         return [
             'filters' => [
-                'editable' => [$this, 'editable']
+                'editable' => [$this, 'editable'],
+                'json_decode' => [$this, 'jsonDecode'],
             ]
         ];
     }
@@ -93,5 +94,9 @@ class Plugin extends PluginBase
         '</div>';
 
         return $html;
+    }
+
+    public function jsonDecode($str) {
+        return json_decode($str);
     }
 }

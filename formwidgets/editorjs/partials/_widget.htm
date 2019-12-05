@@ -1,4 +1,4 @@
-<div id="editorjs"></div>
+<div id="editorjs" class="editorjs"></div>
 <input type="hidden" id="<?= $name ?>" name="<?= $name ?>"> 
 
 <script type="module">
@@ -19,7 +19,7 @@ const editor = new EditorJS({
         class: ImageTool,
         config: {
           endpoints: {
-            byFile: '<?= $byFile ?>', // Your backend file uploader endpoint
+            byFile: '/editorjs/handler/file', // Your backend file uploader endpoint
             byUrl: '<?= $byUrl ?>', // Your endpoint that provides uploading by Url
           },
           additionalRequestHeaders: {
