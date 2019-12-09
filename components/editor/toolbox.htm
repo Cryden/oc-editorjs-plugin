@@ -5,9 +5,10 @@
     <div class="ce-example__button edit" id="saveButton">
         Preview
     </div>
-    <button
-        data-request="onEditorSave"
-        data-request-update="render: '.editorjs__front'">
+    <form data-request="onEditorSave" data-request-update="'{{ __SELF__ }}::block': '.editorjs__front'">
+    <input id="editordata" name="data"></input>
+    <button type="submit">
         Go
     </button>
+    </form>
 </div>

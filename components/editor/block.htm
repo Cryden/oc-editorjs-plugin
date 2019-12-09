@@ -1,0 +1,5 @@
+{% set blocks = __SELF__.property('data')|json_decode %}
+
+{% partial __SELF__~"::toolbox" %}
+{% partial __SELF__~"::render" blocks=blocks %}
+{% partial __SELF__~"::editor"%}

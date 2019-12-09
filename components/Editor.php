@@ -4,6 +4,8 @@ namespace Crydesign\Editorjs\Components;
 
 class Editor extends \Cms\Classes\ComponentBase
 {
+    public $data = '';
+
     public function componentDetails()
     {
         return [
@@ -12,26 +14,17 @@ class Editor extends \Cms\Classes\ComponentBase
         ];
     }
 
-    public function defineProperties()
-    {
-        return [
-            'data' => [
-                 'title'             => 'Max items',
-                 'description'       => 'The most amount of todo items allowed',
-                 'default'           => '',
-                 'type'              => 'string',
-            ]
-        ];
-    }
-
     public function onRun()
     {
         $this->addJs('assets/js/editorjs.js');
         $this->addCss('assets/css/editorjs.css');
-    }
+        // dump($this);
 
+    }
+    
     public function onEditorSave()
     {
-        $this->page['result'] = $value1 + $value2;
+        // $this->property('data') = input('data');
+        //trace_log($_POST);
     }
 }

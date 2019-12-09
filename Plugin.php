@@ -79,21 +79,22 @@ class Plugin extends PluginBase
 
     public function editable($text)
     {
-        $data = json_decode($text);
+        // $data = json_decode($text);
 
-        $inner_html = '';
+        // $inner_html = '';
 
-        foreach ($data->blocks as $block) {
-            $inner_html = $inner_html.$block->type;
-        }
+        // foreach ($data->blocks as $block) {
+        //     $inner_html = $inner_html.$block->type;
+        // }
 
-        $html = '
-        <div id="'.$data->time.'" class="editorjs">
-            <h1> Editor </h1>'
-            .$inner_html.
-        '</div>';
+        // $html = '
+        // <div id="'.$data->time.'" class="editorjs">
+        //     <h1> Editor </h1>'
+        //     .$inner_html.
+        // '</div>'
 
-        return $html;
+
+        // return $html;
     }
 
     public function jsonDecode($str) {

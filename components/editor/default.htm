@@ -1,12 +1,9 @@
 {% set blocks = __SELF__.property('data')|json_decode %}
 
+{{ source }}
 <div class="editorjs__front">
-    {% partial __SELF__~"::toolbox" %}
-    {% partial __SELF__~"::render" blocks=blocks %}
-    {% partial __SELF__~"::editor"%}
+    {% partial __SELF__~"::block" blocks=blocks %}
 </div>
-
-
 
 <script type="module">
 const data = {{ __SELF__.property('data')|raw }};
@@ -82,7 +79,7 @@ const editor = new EditorJS({
     },
     onChange: function() {
       editor.save().then((savedData) => {
-        document.getElementById("editorjs").value = JSON.stringify(savedData)
+        document.getElementById("editordata").value = JSON.stringify(savedData)
       });
     },
     data: data
